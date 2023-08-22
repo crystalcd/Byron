@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1077056872}
-  trianglePrefab: {fileID: 0}
+  trianglePrefab: {fileID: 548551799}
   projectileSpawnPoint: {fileID: 1391968234}
 --- !u!212 &1391968233
 SpriteRenderer:
