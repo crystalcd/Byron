@@ -6,6 +6,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     private float moveSpeed = 5f;
     public GameObject projectilePrefab;
+    public GameObject trianglePrefab;
     public Transform projectileSpawnPoint;
 
     // Start is called before the first frame update
@@ -39,7 +40,9 @@ public class NewBehaviourScript : MonoBehaviour
     void ShootProject()
     {
         GameObject project = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
-        bomb bomb = project.GetComponent<bomb>();
-        bomb.target = transform;
+        GameObject triangle= Instantiate(trianglePrefab, projectileSpawnPoint.position, Quaternion.identity);
+        Triangle triangleObj = triangle.GetComponent<Triangle>();
+        triangleObj.player = transform;
     }
+
 }
