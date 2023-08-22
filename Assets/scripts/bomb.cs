@@ -18,7 +18,15 @@ public class bomb : MonoBehaviour
     {
         if (target != null)
         {
+            // 计算朝向目标的方向
             Vector2 directionToTarget = (target.position - transform.position).normalized;
+
+            // 更新方块位置 使其追踪目标
+            transform.position += (Vector3)directionToTarget * speed * Time.deltaTime;
+        } else
+        {
+            // 如果目标为空 销毁方块
+            Destroy(gameObject);
         }
     }
 }

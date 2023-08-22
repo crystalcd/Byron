@@ -5,6 +5,8 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     private float moveSpeed = 5f;
+    public GameObject projectilePrefab;
+    public Transform projectileSpawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +29,17 @@ public class NewBehaviourScript : MonoBehaviour
 
         // 如果需要，你还可以在这里添加动画相关的代码
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ShootProject();
+        }
+
+    }
+
+    void ShootProject()
+    {
+        GameObject project = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+        bomb bomb = project.GetComponent<bomb>();
+        bomb.target = transform;
     }
 }
